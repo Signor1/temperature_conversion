@@ -1,3 +1,4 @@
+use colored::*;
 use std::io;
 
 fn main() {
@@ -8,7 +9,7 @@ fn main() {
 
         if input_from_user == 0.0 {
             println!("Converting from fahrenheit to celcius");
-            println!("Please enter number of degrees fahrenheit that you want to convert to degrees celcius.");
+            println!("Enter number of degrees fahrenheit that you want to convert to celcius.");
 
             let num_of_fahrenheit = read_input();
             let calculated_celcius = fahrenheit_to_celcius(num_of_fahrenheit);
@@ -17,9 +18,23 @@ fn main() {
                 "{} degrees fahrenheit is {} degrees celcius.",
                 num_of_fahrenheit, calculated_celcius
             );
+
+            break;
         } else if input_from_user == 1.0 {
+            println!("Converting from celcius to fahrenheit");
+            println!("Enter number of degrees celcius that you want to convert to fahrenheit.");
+
+            let num_of_celcius = read_input();
+            let calculated_fahrenheit = celcius_to_fahrenheit(num_of_celcius);
+
+            println!(
+                "{} degrees celcius is {} degrees fahrenheit.",
+                num_of_celcius, calculated_fahrenheit
+            );
+
+            break;
         } else {
-            println!("Invalid input. Please enter 0 or 1.");
+            println!("{}", "Invalid input. Please enter 0 or 1.".red());
         }
     }
 }
