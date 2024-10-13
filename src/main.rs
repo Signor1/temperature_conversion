@@ -1,4 +1,3 @@
-use colored::*;
 use std::io;
 
 fn main() {
@@ -34,7 +33,7 @@ fn main() {
 
             break;
         } else {
-            println!("{}", "Invalid input. Please enter 0 or 1.".red());
+            println!("Invalid input. Please enter 0 or 1.");
         }
     }
 }
